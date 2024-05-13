@@ -1,0 +1,18 @@
+import math.h
+def sumatorio(inicio, fin, f):
+    resultado = 0
+    for i in range(inicio, fin + 1):
+        resultado += f(i)
+    return resultado
+
+def funcion(x):
+    return 1 / (x ** 2)
+
+resp = sumatorio (1, 10, funcion)
+print ('Primera manera: ', resp1)
+
+def funcion1(x):
+    return 1 / (x ** 2)
+
+resp1 = round (sumatorio (10, 1, funcion1), 3)
+print ('Segunda manera: ', resp1)

@@ -20,3 +20,14 @@ def invSumatorio(inicio, fin, f):
     
 resp1 = invSumatorio(10, 1, funcion)
 print('Segunda manera: ', resp1)
+
+print('Literal b:')
+
+def funcion(x):
+    return 1 / (x ** 3)
+
+respb = sumatorio(1, 10, funcion)
+print('Primera manera: ', respb)
+    
+respb1 = invSumatorio(10, 1, funcion)
+print('Segunda manera: ', respb1)

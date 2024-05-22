@@ -1,0 +1,10 @@
+def sumar_serie_inversa(x):
+    n = len(x)
+    suma = 0
+    for i in range(n-1, -1, -1):
+        suma += x[i]
+    return suma
+
+serie = [1, 2, 3, 4, 5]
+resultado = sumar_serie_inversa(serie)
+print(f"La suma de la serie en orden inverso es: {resultado}")

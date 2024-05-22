@@ -1,0 +1,30 @@
+import math
+
+def arctan(x, terms):
+    arctan_x = 0
+    for n in range(terms):
+        term = ((-1)**n * x**(2*n + 1)) / (2*n + 1)
+        arctan_x += term
+    return arctan_x
+
+x1 = 1 / 5
+x2 = 1 / 239
+
+def calculate_pi(terms):
+    arctan1_5 = arctan(x1, terms)
+    arctan1_239 = arctan(x2, terms)
+    pi = 4 * (4 * arctan1_5 - arctan1_239)
+    return pi
+
+target_precision = 10**-3
+true_pi = math.pi
+terms = 1
+calculated_pi = calculate_pi(terms)
+
+while abs(calculated_pi - true_pi) > target_precision:
+    terms += 1
+    calculated_pi = calculate_pi(terms)
+
+print(f"Número de términos necesarios: {terms}")
+print(f"Valor calculado de π: {calculated_pi}")
+print(f"Error: {abs(calculated_pi - true_pi)}")
